@@ -19,8 +19,47 @@ let patternCaracteresIncorrectos = /([\W]|[_])/g;
 let minimumLength = 3;
 let patternEmail = /^\w+@\w+(\w|\.)+\.\w+$/g;
 
+//Test Cart
+var cart = [
+    {
+        "id": 3,
+        "name": "Ultima Nature",
+        "price": 5,
+        "type": "grocery",
+        "offer": {
+            "number": 10,
+            "unidad": 3.333
+        },
+        "quantity": 1,
+        "subTotal": null
+    },
+    {
+        "id": 2,
+        "name": "Ultima Adult",
+        "price": 6.25,
+        "type": "grocery",
+        "quantity": 2,
+        "subTotal": null
+    },
+    {
+        "id": 1,
+        "name": "Advance Hairball",
+        "price": 10.5,
+        "type": "grocery",
+        "offer": {
+            "number": 3,
+            "unidad": 10
+        },
+        "quantity": 1,
+        "subTotal": null
+    }
+];
+calculateTotal();
+printCart();
+
 // Exercise 6
-function validate() {
+function validate(event) {
+    event.preventDefault();
     if (surname.value.length >= minimumLength &&
         surname.value.match(patternNames) != null &&
         firstName.value.match(patternNames) != null &&

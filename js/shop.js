@@ -2,7 +2,7 @@
 var products = [
     {
         id: 1,
-        name: 'cooking oil',
+        name: 'Advance Hairball',
         price: 10.5,
         type: 'grocery',
         offer: {
@@ -12,13 +12,13 @@ var products = [
     },
     {
         id: 2,
-        name: 'Pasta',
+        name: 'Ultima Adult',
         price: 6.25,
         type: 'grocery'
     },
     {
         id: 3,
-        name: 'Instant cupcake mixture',
+        name: 'Ultima Nature',
         price: 5,
         type: 'grocery',
         offer: {
@@ -173,9 +173,9 @@ function printCart() {
         numero += element.quantity;
         let li = document.createElement('li');
         lista.appendChild(li);
-        li.innerHTML = `${element.name} $${element.price} x${element.quantity} <button type="button" onclick="removeFromCart(${element.id})" class="btn btn-outline-dark">Borrar</button>`;
+        li.innerHTML = `${element.name} $${element.price} x${element.quantity} <button type="button" onclick="removeFromCart(${element.id})" class="btn btn-outline-dark borrar">- 1</button>`;
     })
-    totalElement.innerHTML = 'Total: $' + total;
+    totalElement.innerHTML = total+'$';
     contador.innerHTML = numero;
     if (cart.length != 0) {
         emptyCart.classList.add('d-none')
